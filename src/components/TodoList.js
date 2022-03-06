@@ -13,7 +13,7 @@ const TodoList = () => {
   }, [])
 
   const getTodos = async () => {
-    const dbTodos = await fetch(`http://localhost:9000/getTodos`)
+    const dbTodos = await fetch(`https://redis-backend-db.herokuapp.com/getTodos`)
 
     const todos = await dbTodos.json()
 
@@ -21,7 +21,7 @@ const TodoList = () => {
   }
 
   const addTodo = async () => {
-    await fetch('http://localhost:9000/addTodo', {
+    await fetch('https://redis-backend-db.herokuapp.com/addTodo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
