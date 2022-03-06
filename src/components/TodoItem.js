@@ -5,7 +5,7 @@ const TodoItem = ({ todo, color, name, getTodos }) => {
   const [editedTodo, setEditedTodo] = useState(todo.todo)
 
   const deleteTodo = async () => {
-    await fetch(`https://redis-backend-db.herokuapp.com//deleteTodo/${todo.id}`, {
+    await fetch(`https://redis-backend-db.herokuapp.com/deleteTodo/${todo.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
