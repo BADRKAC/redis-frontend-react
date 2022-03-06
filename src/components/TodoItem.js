@@ -5,7 +5,7 @@ const TodoItem = ({ todo, color, name, getTodos }) => {
   const [editedTodo, setEditedTodo] = useState(todo.todo)
 
   const deleteTodo = async () => {
-    await fetch(`http://localhost:9000/deleteTodo/${todo.id}`, {
+    await fetch(`https://redis-backend-db.herokuapp.com//deleteTodo/${todo.id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ const TodoItem = ({ todo, color, name, getTodos }) => {
   }
 
   const updateTodo = async () => {
-    await fetch(`http://localhost:9000/updateTodo/${todo.id}`, {
+    await fetch(`https://redis-backend-db.herokuapp.com/updateTodo/${todo.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const TodoItem = ({ todo, color, name, getTodos }) => {
   }
 
   const checkTodo = async () => {
-    await fetch(`http://localhost:9000/updateTodo/${todo.id}`, {
+    await fetch(`https://redis-backend-db.herokuapp.com/updateTodo/${todo.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
